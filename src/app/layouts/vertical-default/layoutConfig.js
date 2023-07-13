@@ -26,10 +26,10 @@ const layoutConfig = {
     root: {
     },
     content: {
-        sx: {
-            py: 4,
-            px: { lg: 6, xs: 4 }
-        }
+        // sx: {
+        //     py: 4,
+        //     px: { lg: 6, xs: 4 }
+        // }
     }
 };
 

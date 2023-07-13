@@ -9,7 +9,7 @@ function sleep(delay = 0) {
   });
 }
 
-export default function Asynchronous({onOptionSelect}) {
+export default function Asynchronous({ onOptionSelect }) {
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState([]);
   const loading = open && options.length === 0;
@@ -45,7 +45,7 @@ export default function Asynchronous({onOptionSelect}) {
       id="asynchronous-demo"
       sx={{ width: 300 }}
       open={open}
-    //   filterOptions={(x) => x}
+      //   filterOptions={(x) => x}
       onOpen={() => {
         setOpen(true);
       }}
@@ -62,9 +62,9 @@ export default function Asynchronous({onOptionSelect}) {
       renderInput={(params) => (
         <TextField
           {...params}
-          sx={{ backgroundColor: '#FFFFFF',}}
-        //   label="Search company"
-        placeholder='Search company'
+          sx={{ backgroundColor: '#FFFFFF', }}
+          //   label="Search company"
+          placeholder='Search company'
           InputProps={{
             ...params.InputProps,
             endAdornment: (
@@ -88,24 +88,24 @@ const topFilms = [
     token: "524412",
     exchange: "BSE"
   },
-    {
-        name: "ADANI GROUP",
-        isin: "INE198H01019",
-        token: "524412",
-        exchange: "BSE"
-      },
-      {
-        name: "TATA CONSULTANCY SERVICES",
-        isin: "INE198H01019",
-        token: "524412",
-        exchange: "BSE"
-      },
-      {
-        name: "RELIANCE INDUSTRIES",
-        isin: "INE198H01019",
-        token: "524412",
-        exchange: "BSE"
-      },
+  {
+    name: "ADANI GROUP",
+    isin: "INE198H01019",
+    token: "524412",
+    exchange: "BSE"
+  },
+  {
+    name: "BLACKROCK INC",
+    isin: "INE198H01019",
+    token: "524412",
+    exchange: "BSE"
+  },
+  {
+    name: "RELIANCE INDUSTRIES",
+    isin: "INE198H01019",
+    token: "524412",
+    exchange: "BSE"
+  },
   {
     name: "AAREY DRUGS  PHARMACEUTICALS",
     isin: "INE198H01019",
