@@ -104,8 +104,8 @@ const JumboLayout = (props) => {
                             minWidth: 0,
                             flex: 1,
                             flexDirection: 'column',
-                            py: 4,
-                            px: {lg: 6, xs: 4},
+                            // py: 4,
+                            // px: {lg: 6, xs: 4},
                             ...(contentOptions?.sx ?? {})
                         }}
                         className="CmtLayout-content"

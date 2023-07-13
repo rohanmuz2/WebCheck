@@ -133,113 +133,107 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            <h1 className='dashboard' >DASHBOARD</h1>
-            <SearchGlobal
-                sx={{
-                    maxWidth: { xs: 240, md: 320 }
-                }}
-                mb={4}
-                setApiResponse={setApiResponse}
-            />
-            {apiResponse == null && <div className='rowC' style={{ width: '100%', marginTop: '35px' }}>
-                <div style={{ width: '40%' }}>
-                    <div style={{ textAlign: 'justify', fontWeight: 'bold' }}>
-                    NextGenKYC: Redefining KYC for Modern Banking Needs</div>
-                    <div style={{ marginTop: '15px' }}>
-                    Experience a new era of KYC verification using Machine Learning & GenAI led platform revolutionizing the way banks authenticate customer identities                    </div>
-                </div>
-                <div style={{ width: '60%', marginLeft: '10px' }}><img src={logo} width='750px' height='500px' /> </div>
-            </div>}
-            {
-                apiResponse &&
-                <Grid
-                    container
-                    spacing={2}
-                    direction="row"
-                    justifyContent="center"
-                    alignItems="flex-start"
-                    sx={{ marginTop: '20px', paddingX: '20px' }}
-                >
+            <h1 className='dashboard' >Next GEN KYC Platform </h1>
+            <div style={{
+                padding:'0 50px',
+            }}>
+                <SearchGlobal
+                    sx={{
+                        maxWidth: { xs: 240, md: 320 }
+                    }}
+                    mb={4}
+                    setApiResponse={setApiResponse}
+                />
+                {apiResponse == null && <div className='rowC' style={{ width: '100%', marginTop: '35px' }}>
+                    <div style={{ width: '40%', marginRight:'10px' }}>
+                        <h1 style={{ textAlign: 'justify', fontWeight: 'bold' }}>
+                            NextGenKYC: Redefining KYC for Modern Banking Needs</h1>
+                        <div style={{ marginTop: '15px', fontSize:'16px' }}>
+                            Experience a new era of KYC verification using Machine Learning & GenAI led platform revolutionizing the way banks authenticate customer identities.                </div>
+                    </div>
+                    <div style={{ width: '60%', marginLeft: '10px' }}><img src={logo} width='100%' height='400px' /> </div>
+                </div>}
+                {
+                    apiResponse &&
+                    <Grid
+                        container
+                        spacing={2}
+                        direction="row"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        sx={{ marginTop: '20px', paddingX: '20px' }}
+                    >
 
-                    <Grid container item xs={4} mt={3} sx={{ width: '100%' }}>
-                        <Grid container item spacing={3}>
-                            <Typography variant={'h2'} mb={1}>Company profile</Typography>
-                            <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }}>
-                                <Typography variant={'h2'} mb={1}>{apiResponse.PERSONAL_DETAILS.FULL_NAME}</Typography>
-                                <Typography variant={'h6'} mb={1}><strong>Date of Incorporation</strong> : {apiResponse.PERSONAL_DETAILS.DOB}</Typography>
-                                <Typography variant={'h6'} mb={1}><strong>Place of Incorporation </strong>: {apiResponse.PERSONAL_DETAILS.PLACE_INC}</Typography>
-                                <Typography variant={'h6'} mb={1}><strong>PAN </strong>: {apiResponse.PERSONAL_DETAILS.PAN}</Typography>
-                                <Typography variant={'h6'} mb={1}><strong>Email </strong>: {apiResponse.url}</Typography>
-                                <Typography variant={'p'} mb={3}>{apiResponse.about}</Typography>
-                            </Card>
+                        <Grid container item xs={4} mt={3} sx={{ width: '100%' }}>
+                            <Grid container item spacing={3}>
+                                <Typography variant={'h2'} mb={1}>Company profile</Typography>
+                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }}>
+                                    <Typography variant={'h2'} mb={1}>{apiResponse.PERSONAL_DETAILS.FULL_NAME}</Typography>
+                                    <Typography variant={'h6'} mb={1}><strong>Date of Incorporation</strong> : {apiResponse.PERSONAL_DETAILS.DOB}</Typography>
+                                    <Typography variant={'h6'} mb={1}><strong>Place of Incorporation </strong>: {apiResponse.PERSONAL_DETAILS.PLACE_INC}</Typography>
+                                    <Typography variant={'h6'} mb={1}><strong>PAN </strong>: {apiResponse.PERSONAL_DETAILS.PAN}</Typography>
+                                    <Typography variant={'h6'} mb={1}><strong>Email </strong>: {apiResponse.url}</Typography>
+                                    <Typography variant={'p'} mb={3}>{apiResponse.about}</Typography>
+                                </Card>
+
+                            </Grid>
+
+                            <Grid container item spacing={3} mt={1} sx={{ width: '100%' }}>
+                                <Typography variant={'h2'} mb={1}>Connected parties</Typography>
+                                {apiResponse.RELATED_PERSON_DETAILS.map((user, index) => (
+                                    <UserItem id={index} user={user.RELATED_PERSONS} key={index} sx={{ width: '100%' }} />
+                                ))}
+                            </Grid>
+                            <Grid container direction={"column"} item spacing={3} mt={1} sx={{ width: '100%' }}>
+                                <Typography variant={'h2'} mb={1}>Documents</Typography>
+                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }}>
+                                    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                                        <ListItem disablePadding>
+                                            <ListItemButton>
+                                                <ListItemIcon>
+                                                    <FolderIcon />
+                                                    {/* <DescriptionIcon /> */}
+                                                </ListItemIcon>
+                                                <ListItemText primary="Annual Report 2022-23" />
+                                            </ListItemButton>
+                                        </ListItem>
+                                        <ListItem disablePadding>
+                                            <ListItemButton>
+                                                <ListItemIcon>
+                                                    <FolderIcon />
+                                                    {/* <DescriptionIcon /> */}
+                                                </ListItemIcon>
+                                                <ListItemText primary="Annual Filling 2022-23" />
+                                            </ListItemButton>
+                                        </ListItem>
+                                    </List>
+                                </Card>
+                            </Grid>
 
                         </Grid>
+                        <Grid item xs={8}>
+                            <Typography variant={'h2'} mb={1}>Sentiment analysis</Typography>
 
-                        <Grid container item spacing={3} mt={1} sx={{ width: '100%' }}>
-                            <Typography variant={'h2'} mb={1}>Connected parties</Typography>
-                            {apiResponse.RELATED_PERSON_DETAILS.map((user, index) => (
-                                <UserItem id={index} user={user.RELATED_PERSONS} key={index} sx={{ width: '100%' }} />
-                            ))}
-                        </Grid>
-                        <Grid container direction={"column"} item spacing={3} mt={1} sx={{ width: '100%' }}>
-                            <Typography variant={'h2'} mb={1}>Documents</Typography>
-                            <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }}>
-                                <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                                    <ListItem disablePadding>
-                                        <ListItemButton>
-                                            <ListItemIcon>
-                                                <FolderIcon />
-                                                {/* <DescriptionIcon /> */}
-                                            </ListItemIcon>
-                                            <ListItemText primary="Annual Report 2022-23" />
-                                        </ListItemButton>
-                                    </ListItem>
-                                    <ListItem disablePadding>
-                                        <ListItemButton>
-                                            <ListItemIcon>
-                                                <FolderIcon />
-                                                {/* <DescriptionIcon /> */}
-                                            </ListItemIcon>
-                                            <ListItemText primary="Annual Filling 2022-23" />
-                                        </ListItemButton>
-                                    </ListItem>
-                                </List>
-                            </Card>
-                        </Grid>
+                            <Grid
+                                container
+                                spacing={2}
+                                direction="column"
+                                justifyContent="center"
+                                alignItems="flex-start"
+                                mt={-1}
+                            //   sx={{ marginTop: '0px' }}
 
-                    </Grid>
-                    <Grid item xs={8}>
-                        <Typography variant={'h2'} mb={1}>Sentiment analysis</Typography>
-
-                        <Grid
-                            container
-                            spacing={2}
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            mt={-1}
-                        //   sx={{ marginTop: '0px' }}
-
-                        >
-                            <Grid container item xs={6} spacing={1}>
-                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
-                                    <Grid
-                                        container
-                                        direction="column"
-                                        justifyContent="flex-start"
-                                        alignItems="flex-start"
-                                        mb={1}
-                                    >
-
-                                         <Grid
+                            >
+                                <Grid container item xs={6} spacing={1}>
+                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                        <Grid
                                             container
-                                            direction="row"
+                                            direction="column"
                                             justifyContent="flex-start"
-                                            alignItems="center"
+                                            alignItems="flex-start"
                                             mb={1}
                                         >
 
-                                            <Typography variant='h3'>Company outlook</Typography>
                                             <Grid
                                                 container
                                                 direction="row"
@@ -248,37 +242,46 @@ const Home = () => {
                                                 mb={1}
                                             >
 
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score: {apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.score} </Typography>
-                                                <Chip
-                                                    color="success"
-                                                    onClick={function () { }}
-                                                    size="sm"
-                                                    variant="soft"
-                                                    label="Positive"
-                                                />
-                                            </Grid>
-                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.remark}</Typography>
-                                        </Grid>
-                                        <Typography variant={'p'} mb={3}>{mockData[0].sentiment_analysis.remark}</Typography>
-                                    </Grid>
-                                </Card>
-                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
-                                    <Grid
-                                        container
-                                        direction="column"
-                                        justifyContent="flex-start"
-                                        alignItems="flex-start"
-                                        mb={1}
-                                    >
+                                                <Typography variant='h3'>Company outlook</Typography>
+                                                <Grid
+                                                    container
+                                                    direction="row"
+                                                    justifyContent="flex-start"
+                                                    alignItems="center"
+                                                    mb={1}
+                                                >
 
-                                        <Typography variant='h3'>Political exposure</Typography>
+                                                    <Typography variant={'h4'} pt={1} mr={1}>Score: {apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.score} </Typography>
+                                                    <Chip
+                                                        color="success"
+                                                        onClick={function () { }}
+                                                        size="sm"
+                                                        variant="soft"
+                                                        label="Positive"
+                                                    />
+                                                </Grid>
+                                                <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.remark}</Typography>
+                                            </Grid>
+                                            <Typography variant={'p'} mb={3}>{mockData[0].sentiment_analysis.remark}</Typography>
+                                        </Grid>
+                                    </Card>
+                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
                                         <Grid
                                             container
-                                            direction="row"
+                                            direction="column"
                                             justifyContent="flex-start"
-                                            alignItems="center"
+                                            alignItems="flex-start"
                                             mb={1}
                                         >
+
+                                            <Typography variant='h3'>Political exposure</Typography>
+                                            <Grid
+                                                container
+                                                direction="row"
+                                                justifyContent="flex-start"
+                                                alignItems="center"
+                                                mb={1}
+                                            >
                                                 {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
                                                 <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.political_inclination.score} </Typography>
 
@@ -364,17 +367,20 @@ const Home = () => {
 
                                         </Grid >
 
-                                </Card >
+                                    </Card >
+                                </Grid >
+
+
+                                {/* <Divider /> */}
+
                             </Grid >
-
-
-    {/* <Divider /> */ }
-
                         </Grid >
                     </Grid >
-                </Grid >
 
-            }
+
+                }
+
+            </div>
 
 
 

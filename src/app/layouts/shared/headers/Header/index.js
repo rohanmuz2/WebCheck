@@ -37,7 +37,7 @@ const Header = () => {
                     </JumboIconButton>
                 }
                 <MessagesDropdown />
-                <NotificationsDropdown />
+                {/* <NotificationsDropdown /> */}
                 <AuthUserDropdown />
             </Stack>
 
