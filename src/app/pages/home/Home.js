@@ -171,7 +171,7 @@ const Home = () => {
                                     <Typography variant={'h2'} mb={1}>{apiResponse.PERSONAL_DETAILS.FULL_NAME}</Typography>
                                     <Typography variant={'h6'} mb={1}><strong>Date of Incorporation</strong> : {apiResponse.PERSONAL_DETAILS.DOB}</Typography>
                                     <Typography variant={'h6'} mb={1}><strong>Place of Incorporation </strong>: {apiResponse.PERSONAL_DETAILS.PLACE_INC}</Typography>
-                                    <Typography variant={'h6'} mb={1}><strong>PAN </strong>: {apiResponse.PERSONAL_DETAILS.PAN}</Typography>
+                                    {/* <Typography variant={'h6'} mb={1}><strong>PAN </strong>: {apiResponse.PERSONAL_DETAILS.PAN}</Typography> */}
                                     <Typography variant={'h6'} mb={1}><strong>Email </strong>: {apiResponse.url}</Typography>
                                     <Typography variant={'p'} mb={3}>{apiResponse.about}</Typography>
                                 </Card>
@@ -181,7 +181,7 @@ const Home = () => {
                             <Grid container item spacing={3} mt={1} sx={{ width: '100%' }}>
                                 <Typography variant={'h2'} mb={1}>Connected parties</Typography>
                                 {apiResponse.RELATED_PERSON_DETAILS.map((user, index) => (
-                                    <UserItem id={index} user={user.RELATED_PERSONS} key={index} sx={{ width: '100%' }} />
+                                    <UserItem id={index} user={user.RELATED_PERSONS} userDetail={user} key={index} sx={{ width: '100%' }} />
                                 ))}
                             </Grid>
                             <Grid container direction={"column"} item spacing={3} mt={1} sx={{ width: '100%' }}>

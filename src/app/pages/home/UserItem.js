@@ -21,7 +21,8 @@ const UserItem = ({user, id, userDetail}) => {
       const navigate = useNavigate();
     
     const handleClick = () => {
-        navigate(`/user/profile/${id+1}`, '_blank');
+        // navigate(`/user/profile/${id+1}`);
+        window.open(`/user/profile/${id+1}`)
     };
     return (
         <Card sx={{mb: 1,  width: '100%'}}>
