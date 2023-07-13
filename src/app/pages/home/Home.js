@@ -247,14 +247,25 @@ const Home = () => {
                                             mb={1}
                                         >
 
-                                            <Typography variant={'h4'} pt={1} mr={1}>Score: {mockData[0].sentiment_analysis.score} </Typography>
-                                            <Chip
-                                                color="success"
-                                                onClick={function () { }}
-                                                size="sm"
-                                                variant="soft"
-                                                label="Positive"
-                                            />
+                                            <Typography variant='h3'>Company outlook</Typography>
+                                            <Grid
+                                                container
+                                                direction="row"
+                                                justifyContent="flex-start"
+                                                alignItems="center"
+                                                mb={1}
+                                            >
+
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score: {apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.score} </Typography>
+                                                <Chip
+                                                    color="success"
+                                                    onClick={function () { }}
+                                                    size="sm"
+                                                    variant="soft"
+                                                    label="Positive"
+                                                />
+                                            </Grid>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.remark}</Typography>
                                         </Grid>
                                         <Typography variant={'p'} mb={3}>{mockData[0].sentiment_analysis.remark}</Typography>
                                     </Grid>
@@ -277,92 +288,102 @@ const Home = () => {
                                             mb={1}
                                         >
 
-                                            {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
-                                            <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].political_inclination.score} </Typography>
 
-                                            <Chip
-                                                color="info"
-                                                onClick={function () { }}
-                                                size="sm"
-                                                variant="soft"
-                                                label="Moderate exposure"
-                                            />
+=======
+                                                {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.political_inclination.score} </Typography>
+
+                                                <Chip
+                                                    color="info"
+                                                    onClick={function () { }}
+                                                    size="sm"
+                                                    variant="soft"
+                                                    label="Moderate exposure"
+                                                />
+                                            </Grid>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.political_inclination.remark}</Typography>
+
+
                                         </Grid>
-                                        <Typography variant={'p'} mb={3}>{mockData[0].political_inclination.remark}</Typography>
-                                    </Grid>
-                                </Card>
-                            </Grid>
-                            <Grid container item xs={6} spacing={1}>
-                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
-                                    <Grid
-                                        container
-                                        direction="column"
-                                        justifyContent="flex-start"
-                                        alignItems="flex-start"
-                                        mb={1}
-                                    >
-
-                                        <Typography variant='h3'>Criminal background</Typography>
+                                    </Card>
+                                </Grid>
+                                <Grid container item xs={6} spacing={1}>
+                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
                                         <Grid
                                             container
-                                            direction="row"
+                                            direction="column"
                                             justifyContent="flex-start"
-                                            alignItems="center"
+                                            alignItems="flex-start"
                                             mb={1}
                                         >
 
-                                            <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].criminal_background.score}</Typography>
+                                            <Typography variant='h3'>Criminal background</Typography>
+                                            <Grid
+                                                container
+                                                direction="row"
+                                                justifyContent="flex-start"
+                                                alignItems="center"
+                                                mb={1}
+                                            >
 
-                                            <Chip
-                                                color="info"
-                                                onClick={function () { }}
-                                                size="sm"
-                                                variant="soft"
-                                                label="No criminal record"
-                                            />
-                                        </Grid>
-                                        <Typography variant={'p'} mb={3}>{mockData[0].criminal_background.remark}</Typography>
-                                    </Grid>
-                                </Card>
-                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
-                                    <Grid
-                                        container
-                                        direction="column"
-                                        justifyContent="flex-start"
-                                        alignItems="flex-start"
-                                        mb={1}
-                                    >
 
-                                        <Typography variant='h3'>Business exposure</Typography>
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.criminal_background.score}</Typography>
+
+                                                <Chip
+                                                    color="info"
+                                                    onClick={function () { }}
+                                                    size="sm"
+                                                    variant="soft"
+                                                    label="No criminal record"
+                                                />
+                                            </Grid>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.criminal_background.remark}</Typography>
+
+                                        </Grid >
+
+                                    </Card >
+                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
                                         <Grid
                                             container
-                                            direction="row"
+                                            direction="column"
                                             justifyContent="flex-start"
-                                            alignItems="center"
+                                            alignItems="flex-start"
                                             mb={1}
                                         >
 
-                                            <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].business_exposer.score}</Typography>
-
-                                            <Chip
-                                                color="warning"
-                                                onClick={function () { }}
-                                                size="sm"
-                                                variant="soft"
-                                                label="High risk"
-                                            />
-                                        </Grid>
-                                        <Typography variant={'p'} mb={3}>{mockData[0].business_exposer.remark}</Typography>
-                                    </Grid>
-                                </Card>
-                            </Grid>
+                                            <Typography variant='h3'>Business exposure</Typography>
+                                            <Grid
+                                                container
+                                                direction="row"
+                                                justifyContent="flex-start"
+                                                alignItems="center"
+                                                mb={1}
+                                            >
 
 
-                            {/* <Divider /> */}
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.business_exposer.score}</Typography>
 
-                        </Grid>
-                    </Grid>
-                </Grid>
+                                                <Chip
+                                                    color="warning"
+                                                    onClick={function () { }}
+                                                    size="sm"
+                                                    variant="soft"
+                                                    label="High risk"
+                                                />
+                                            </Grid>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.business_exposer.remark}</Typography>
+
+                                        </Grid >
+
+                                </Card >
+                            </Grid >
+
+
+    {/* <Divider /> */ }
+
+                        </Grid >
+                    </Grid >
+                </Grid >
 
             }
 

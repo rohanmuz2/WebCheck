@@ -16,19 +16,23 @@ const SearchGlobal = ({ sx, setApiResponse }) => {
             formData.append('entityName', selectedOption.name);
 
             axios({
-                method: 'post',
-                url: 'https://52f7-2401-4900-1c2d-7a01-9951-1b1c-4bdc-33fa.ngrok-free.app/getCompanydetails/',
-                data: formData,
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
+                method: 'get',
+                url: 'https://649a9b61bf7c145d02391c63.mockapi.io/search',
+                // data: formData,
+                // headers: {
+                //     'Content-Type': 'multipart/form-data'
+                // }
             })
                 .then((response) => {
-                    console.log("🚀 ~ file: SearchGlobal.js:25 ~ .then ~ response:", response.data.PERSONAL_DETAILS.FULL_NAME)
+                    console.log("🚀 ~ file: SearchGlobal.js:25 ~ .then ~ response:", response.data[0].PERSONAL_DETAILS.FULL_NAME)
+                    const filteredArray = response.data.filter(obj => obj.PERSONAL_DETAILS.FULL_NAME === selectedOption.name);
+                    console.log("🚀 ~ file: SearchGlobal.js:29 ~ .then ~ filteredArray:", filteredArray)
+                    console.log("🚀 ~ file: SearchGlobal.js:17 ~ fetchData ~ selectedOption.name:", selectedOption.name)
 
-                    let formData1 = new FormData();
-                    formData1.append('entityName', response.data.PERSONAL_DETAILS.FULL_NAME);
-                    setApiResponse(response.data);  // Store the response
+
+                    // let formData1 = new FormData();
+                    // formData1.append('entityName', response.data.PERSONAL_DETAILS.FULL_NAME);
+                    setApiResponse(filteredArray[0]);  // Store the response
                 })
                 .catch((error) => {
                     console.error('Error fetching data: ', error);
@@ -45,8 +49,8 @@ const SearchGlobal = ({ sx, setApiResponse }) => {
                 <Asynchronous
                     onOptionSelect={setSelectedOption}
                 />
-                <Button style={{ backgroundColor: '#db0011'}} onClick={fetchData}>Search</Button>
-        </Stack >
+                <Button style={{ backgroundColor: '#db0011' }} onClick={fetchData}>Search</Button>
+            </Stack >
         </>
     );
 };
