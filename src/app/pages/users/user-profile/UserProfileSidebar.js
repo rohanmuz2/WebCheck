@@ -145,7 +145,7 @@ console.log("🚀 ~ file: UserProfileSidebar.js:9 ~ user:", user)
                                             onClick={function () { }}
                                             size="sm"
                                             variant="soft"
-                                            label="No criminal record"
+                                            label="Low risk"
                                         />
                                     </Grid>
                                     <Typography variant={'p'} mb={3}>{user.SENTIMENT.criminal_background.remark}</Typography>
@@ -172,11 +172,11 @@ console.log("🚀 ~ file: UserProfileSidebar.js:9 ~ user:", user)
                                         <Typography variant={'h4'} pt={1} mr={1}>Score : {user.SENTIMENT.traveled_sanctioned_country.score}</Typography>
 
                                         <Chip
-                                            color="warning"
+                                            color="info"
                                             onClick={function () { }}
                                             size="sm"
                                             variant="soft"
-                                            label="High risk"
+                                            label="Low risk"
                                         />
                                     </Grid>
                                     <Typography variant={'p'} mb={3}>{user.SENTIMENT.traveled_sanctioned_country.remark}</Typography>
