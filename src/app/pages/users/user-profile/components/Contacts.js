@@ -6,7 +6,7 @@ import Link from "@mui/material/Link";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 
-const Contacts = () => {
+const Contacts = ({user}) => {
     return (
         <JumboCardQuick title={"Contact"} noWrapper>
             <List disablePadding sx={{mb: 2}}>
@@ -16,7 +16,7 @@ const Contacts = () => {
                     </ListItemIcon>
                     <ListItemText
                         primary={<Typography variant="body1" color="text.secondary">Email</Typography>}
-                        secondary={<Typography variant="body1" color="text.primary">g.adani@adani.com</Typography>}
+                        secondary={<Typography variant="body1" color="text.primary">{user.contact_info}</Typography>}
                     />
                 </ListItem>
                 <ListItem alignItems="flex-start" sx={{p: theme => theme.spacing(.5, 3)}}>
@@ -25,7 +25,7 @@ const Contacts = () => {
                     </ListItemIcon>
                     <ListItemText
                         primary={<Typography variant="body1" color="text.secondary">Web page</Typography>}
-                        secondary={<Typography variant="body1" color="text.primary">https://www.adani.com/</Typography>}
+                        secondary={<Typography variant="body1" color="text.primary">Not available</Typography>}
                     />
                 </ListItem>
                 <ListItem alignItems="flex-start" sx={{p: theme => theme.spacing(.5, 3)}}>
@@ -34,7 +34,7 @@ const Contacts = () => {
                     </ListItemIcon>
                     <ListItemText
                         primary={<Typography variant="body1" color="text.secondary">Phone</Typography>}
-                        secondary={<Typography variant="body1" color="text.primary">+91 9000000000</Typography>}
+                        secondary={<Typography variant="body1" color="text.primary">Not available</Typography>}
                     />
                 </ListItem>
             </List>

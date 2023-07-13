@@ -23,8 +23,8 @@ const UserProfile = () => {
         axios.get(`https://649a9b61bf7c145d02391c63.mockapi.io/linkedin`)
             .then(response => {
           
-                // const user = response.data.find(user => Number(user.id) === Number(id));
-                setUser(response.data[0]);
+                const user = response.data.find(user => Number(user.id) === Number(id));
+                setUser(user);
                 setIsLoading(false); // Set loading to false after the data is fetched
 
              })
@@ -38,9 +38,10 @@ const UserProfile = () => {
     }
 
     return (
+        <div style={{padding: '0 40px'}}>
         <JumboContentLayout
             header={<Header user={user}/>}
-            sidebar={<UserProfileSidebar/>}
+            sidebar={<UserProfileSidebar  user={user}/>}
             layoutOptions={{
                 header: {
                     sx: {
@@ -83,8 +84,10 @@ const UserProfile = () => {
                 main: {
                     sx: {
                         [theme.breakpoints.down('lg')]: {
-                            minHeight: 0
-                        }
+                            minHeight: 0,
+                         }
+                        // p: {xs: theme.spacing(6, 4, 11), lg: theme.spacing(6, 6, 11)},
+
                     }
                 }
             }}
@@ -93,6 +96,7 @@ const UserProfile = () => {
             <Biography bio={user.about_info}/>
             {/* <Events sx={{mb: {xs: 3.75, lg: 0}}}/> */}
         </JumboContentLayout>
+        </div>
     );
 };
 

@@ -17,11 +17,11 @@ const Item = styled(Span)(({theme}) => ({
     padding: theme.spacing(0, 1),
 }));
 
-const UserItem = ({user, id}) => {
+const UserItem = ({user, id, userDetail}) => {
       const navigate = useNavigate();
     
     const handleClick = () => {
-        navigate(`/user/profile/${id+1}`);
+        navigate(`/user/profile/${id+1}`, '_blank');
     };
     return (
         <Card sx={{mb: 1,  width: '100%'}}>

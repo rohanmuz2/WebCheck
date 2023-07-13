@@ -5,7 +5,8 @@ import Friends from "./components/Friends";
 import Photos from "./components/Photos";
 import { Card, Chip, Typography } from '@mui/material';
 
-const UserProfileSidebar = () => {
+const UserProfileSidebar = ({user}) => {
+console.log("🚀 ~ file: UserProfileSidebar.js:9 ~ user:", user)
 
     const mockData = [
         {
@@ -37,9 +38,9 @@ const UserProfileSidebar = () => {
     ]
 
     return (
-        <Grid container spacing={3.75}>
+        <Grid container spacing={3.75} > 
             <Grid item xs={12} md={6} lg={12}>
-                <Contacts/>
+                <Contacts user={user}/>
             </Grid>
             <Grid item xs={12} md={6} lg={12}>
                      <Typography variant={'h2'} mb={1}>Sentiment analysis</Typography>
@@ -73,7 +74,7 @@ const UserProfileSidebar = () => {
                                         mb={1}
                                     >
 
-                                        <Typography variant={'h4'} pt={1} mr={1}>Score: {mockData[0].sentiment_analysis.score} </Typography>
+                                        <Typography variant={'h4'} pt={1} mr={1}>Score: {user.SENTIMENT.sentiment_analysis.score} </Typography>
                                         <Chip
                                             color="success"
                                             onClick={function () { }}
@@ -82,7 +83,7 @@ const UserProfileSidebar = () => {
                                             label="Positive"
                                         />
                                     </Grid>
-                                    <Typography variant={'p'} mb={3}>{mockData[0].sentiment_analysis.remark}</Typography>
+                                    <Typography variant={'p'} mb={3}>{user.SENTIMENT.sentiment_analysis.remark}</Typography>
                                 </Grid>
                             </Card>
                             <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
@@ -104,7 +105,7 @@ const UserProfileSidebar = () => {
                                     >
 
                                         {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
-                                        <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].political_inclination.score} </Typography>
+                                        <Typography variant={'h4'} pt={1} mr={1}>Score : {user.SENTIMENT.political_inclination.score} </Typography>
 
                                         <Chip
                                             color="info"
@@ -114,7 +115,7 @@ const UserProfileSidebar = () => {
                                             label="Moderate exposure"
                                         />
                                     </Grid>
-                                    <Typography variant={'p'} mb={3}>{mockData[0].political_inclination.remark}</Typography>
+                                    <Typography variant={'p'} mb={3}>{user.SENTIMENT.political_inclination.remark}</Typography>
                                 </Grid>
                             </Card>
                         </Grid>
@@ -137,7 +138,7 @@ const UserProfileSidebar = () => {
                                         mb={1}
                                     >
 
-                                        <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].criminal_background.score}</Typography>
+                                        <Typography variant={'h4'} pt={1} mr={1}>Score : {user.SENTIMENT.criminal_background.score}</Typography>
 
                                         <Chip
                                             color="info"
@@ -147,7 +148,7 @@ const UserProfileSidebar = () => {
                                             label="No criminal record"
                                         />
                                     </Grid>
-                                    <Typography variant={'p'} mb={3}>{mockData[0].criminal_background.remark}</Typography>
+                                    <Typography variant={'p'} mb={3}>{user.SENTIMENT.criminal_background.remark}</Typography>
                                 </Grid>
                             </Card>
                             <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
@@ -168,7 +169,7 @@ const UserProfileSidebar = () => {
                                         mb={1}
                                     >
 
-                                        <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].traveled_sanctioned_country.score}</Typography>
+                                        <Typography variant={'h4'} pt={1} mr={1}>Score : {user.SENTIMENT.traveled_sanctioned_country.score}</Typography>
 
                                         <Chip
                                             color="warning"
@@ -178,7 +179,7 @@ const UserProfileSidebar = () => {
                                             label="High risk"
                                         />
                                     </Grid>
-                                    <Typography variant={'p'} mb={3}>{mockData[0].traveled_sanctioned_country.remark}</Typography>
+                                    <Typography variant={'p'} mb={3}>{user.SENTIMENT.traveled_sanctioned_country.remark}</Typography>
                                 </Grid>
                             </Card>
                         </Grid>

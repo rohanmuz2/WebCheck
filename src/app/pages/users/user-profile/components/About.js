@@ -127,7 +127,7 @@ const About = ({user}) => {
                     <ListItemText
                         primary={<Typography fontSize={"12px"} variant="h6" color="text.secondary" mb={.5}>Domicile
                             </Typography>}
-                        secondary={<Typography variant="body1" color="text.primary">India</Typography>}
+                        secondary={<Typography variant="body1" color="text.primary">{user.location}</Typography>}
                     />
                 </ListItem>
                 <ListItem
@@ -143,7 +143,7 @@ const About = ({user}) => {
                             name</Typography>}
                         secondary={
                             <Typography component={"div"} variant={'body1'}>
-                                Shantilal Adani
+                                Not available
                             </Typography>
                         }
                     />
@@ -161,7 +161,7 @@ const About = ({user}) => {
                             name</Typography>}
                         secondary={
                             <Typography component={"div"} variant={'body1'}>
-                                Shanti Adani
+                                Not available
                             </Typography>
                         }
                     />
