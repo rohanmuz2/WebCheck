@@ -9,7 +9,7 @@ import Asynchronous from 'app/shared/SearchGlobal/AutoComplete';
 import axios from 'axios';
 import FolderIcon from '@mui/icons-material/Folder';
 import './style.css';
-import logo from './chatgpt.jpg';
+import logo from './ai.jpg';
 const Home = () => {
     const [apiResponse, setApiResponse] = useState(null);
     // const [isCardVisible, setCardVisible] = useState(false); // start with the card hidden
