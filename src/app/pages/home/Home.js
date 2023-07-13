@@ -238,8 +238,7 @@ const Home = () => {
                                         mb={1}
                                     >
 
-                                        <Typography variant='h3'>Company outlook</Typography>
-                                        <Grid
+                                         <Grid
                                             container
                                             direction="row"
                                             justifyContent="flex-start"
@@ -287,9 +286,6 @@ const Home = () => {
                                             alignItems="center"
                                             mb={1}
                                         >
-
-
-=======
                                                 {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
                                                 <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.political_inclination.score} </Typography>
 
