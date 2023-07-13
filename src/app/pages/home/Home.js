@@ -19,7 +19,7 @@ const handleFile = () => {
 
 const handleFilling = () => {
     // navigate(`/user/profile/${id+1}`);
-    window.open(`https://s24.q4cdn.com/856567660/files/doc_financials/2022/ar/online/pdfs/BLK_AR22_complete.pdf`)
+    window.open(`https://d18rn0p25nwr6d.cloudfront.net/CIK-0001364742/c77752c5-a383-49c8-abbb-dd993e6ee47c.pdf`)
 };
 
 const Home = () => {
@@ -368,7 +368,7 @@ const Home = () => {
                                                 <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.business_exposer.score}</Typography>
 
                                                 <Chip
-                                                    color="warning"
+                                                    color="info"
                                                     onClick={function () { }}
                                                     size="sm"
                                                     variant="soft"
