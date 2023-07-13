@@ -10,6 +10,18 @@ import axios from 'axios';
 import FolderIcon from '@mui/icons-material/Folder';
 import './style.css';
 import logo from './ai.jpg';
+
+
+const handleFile = () => {
+    // navigate(`/user/profile/${id+1}`);
+    window.open(`https://s24.q4cdn.com/856567660/files/doc_financials/2022/ar/online/pdfs/BLK_AR22_complete.pdf`)
+};
+
+const handleFilling = () => {
+    // navigate(`/user/profile/${id+1}`);
+    window.open(`https://s24.q4cdn.com/856567660/files/doc_financials/2022/ar/online/pdfs/BLK_AR22_complete.pdf`)
+};
+
 const Home = () => {
     const [apiResponse, setApiResponse] = useState(null);
     // const [isCardVisible, setCardVisible] = useState(false); // start with the card hidden
@@ -189,7 +201,7 @@ const Home = () => {
                                 <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }}>
                                     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                                         <ListItem disablePadding>
-                                            <ListItemButton>
+                                            <ListItemButton onClick={handleFile}>
                                                 <ListItemIcon>
                                                     <FolderIcon />
                                                     {/* <DescriptionIcon /> */}
@@ -198,7 +210,7 @@ const Home = () => {
                                             </ListItemButton>
                                         </ListItem>
                                         <ListItem disablePadding>
-                                            <ListItemButton>
+                                            <ListItemButton onClick={handleFilling}>
                                                 <ListItemIcon>
                                                     <FolderIcon />
                                                     {/* <DescriptionIcon /> */}
@@ -326,7 +338,7 @@ const Home = () => {
                                                     onClick={function () { }}
                                                     size="sm"
                                                     variant="soft"
-                                                    label="No criminal record"
+                                                    label="Low risk"
                                                 />
                                             </Grid>
                                             <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.criminal_background.remark}</Typography>
@@ -360,7 +372,7 @@ const Home = () => {
                                                     onClick={function () { }}
                                                     size="sm"
                                                     variant="soft"
-                                                    label="High risk"
+                                                    label="Low risk"
                                                 />
                                             </Grid>
                                             <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.business_exposer.remark}</Typography>
