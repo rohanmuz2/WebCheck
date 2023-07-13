@@ -45,11 +45,18 @@ const SearchGlobal = ({ sx, setApiResponse }) => {
 
     return (
         <>
-            <Stack direction="row" spacing={2}>
+            <Stack direction="row" alignItems={'center'} spacing={2}>
                 <Asynchronous
                     onOptionSelect={setSelectedOption}
                 />
-                <Button style={{ backgroundColor: '#db0011' }} onClick={fetchData}>Search</Button>
+                <Button 
+                    sx={{
+                        backgroundColor: '#db0011',
+                        color:'#FFF',
+                        paddingX :'20px',
+                        height: '40px'
+                    }}
+                     onClick={fetchData}>Search</Button>
             </Stack >
         </>
     );
