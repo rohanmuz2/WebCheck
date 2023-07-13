@@ -40,6 +40,7 @@ const Header = () => {
                 <NotificationsDropdown />
                 <AuthUserDropdown />
             </Stack>
+
         </React.Fragment>
     );
 };

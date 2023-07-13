@@ -143,17 +143,10 @@ const Home = () => {
             />
             {apiResponse == null && <div className='rowC' style={{ width: '100%', marginTop: '35px' }}>
                 <div style={{ width: '40%' }}>
-                    <div style={{ textAlign: 'justify', fontWeight: 'bold' }}>text text text text text text
-                        text text text text text texttext text text text text texttext text text text text
-                        texttext text text text text texttext text text text text texttext text text text text text
-                        text text text text text texttext text text text text texttext text text text text
-                        texttext text text text text texttext text text text text texttext text text text text text</div>
-                    <div style={{ marginTop: '15px' }}>text text text text text texttext text text text text texttext text text text text
-                        texttext text text text text texttext text text text text texttext text text text text text
-                        text text text text text texttext text text text text texttext text text text text
-                        texttext text text text text texttext text text text text texttext text text text text text
-                        text text text text text texttext text text text text texttext text text text text
-                        texttext text text text text texttext text text text text texttext text text text text text</div>
+                    <div style={{ textAlign: 'justify', fontWeight: 'bold' }}>
+                    NextGenKYC: Redefining KYC for Modern Banking Needs</div>
+                    <div style={{ marginTop: '15px' }}>
+                    Experience a new era of KYC verification using Machine Learning & GenAI led platform revolutionizing the way banks authenticate customer identities                    </div>
                 </div>
                 <div style={{ width: '60%', marginLeft: '10px' }}><img src={logo} width='750px' height='500px' /> </div>
             </div>}

@@ -101,7 +101,7 @@ const topFilms = [
     exchange: "BSE"
   },
   {
-    name: "RELIANCE INDUSTRIES",
+    name: "GOOGLE LLC",
     isin: "INE198H01019",
     token: "524412",
     exchange: "BSE"
