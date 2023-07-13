@@ -8,6 +8,8 @@ import JumboContentLayout from '@jumbo/components/JumboContentLayout/JumboConten
 import Asynchronous from 'app/shared/SearchGlobal/AutoComplete';
 import axios from 'axios';
 import FolderIcon from '@mui/icons-material/Folder';
+import './style.css';
+import logo from './chatgpt.jpg';
 const Home = () => {
     const [apiResponse, setApiResponse] = useState(null);
     // const [isCardVisible, setCardVisible] = useState(false); // start with the card hidden
@@ -15,7 +17,7 @@ const Home = () => {
     // const handleClick = () => {
     //     setCardVisible(!isCardVisible); // toggle visibility on button click
     //   };
-    
+
 
     const CKYCData = [
 
@@ -60,7 +62,7 @@ const Home = () => {
 
             RELATED_PERSON_DETAILS: [
                 {
-                 RELATED_PERSONS: {
+                    RELATED_PERSONS: {
                         PREFIX: "MR",
                         FNAME: "AJAY",
                         MNAME: "",
@@ -122,7 +124,7 @@ const Home = () => {
                 score: "8/10",
                 remark: "Gautam Adani, Chairman of the Adani Group, is a billionaire industrialist who has embarked on a high-stakes journey to Afghanistan with the aim of striking a significant trade deal. He has also sought shareholder approval for Adani Transmission Ltd and Adani Green Energy, and has denied all allegations by Hindenburg Research. Adani has also pledged to bear the expenses of children who lost their parents in the Odisha train tragedy, and is investing US$70 billion"
             },
-            business_exposer : {
+            business_exposer: {
                 remark: "The text provides a comprehensive overview of the Adani Group's business activities, including their investments in energy, ports, and airports, as well as their involvement in the Odisha train tragedy and their response to the Hindenburg Research report. The text also mentions Adani's involvement in Afghanistan, as well as his recent success in winning the world's largest solar bid. ",
                 score: "8/10"
             }
@@ -130,7 +132,8 @@ const Home = () => {
     ]
 
     return (
-         <React.Fragment>
+        <React.Fragment>
+            <h1 className='dashboard' >DASHBOARD</h1>
             <SearchGlobal
                 sx={{
                     maxWidth: { xs: 240, md: 320 }
@@ -138,8 +141,24 @@ const Home = () => {
                 mb={4}
                 setApiResponse={setApiResponse}
             />
-            
-            {apiResponse &&
+            {apiResponse == null && <div className='rowC' style={{ width: '100%', marginTop: '35px' }}>
+                <div style={{ width: '40%' }}>
+                    <div style={{ textAlign: 'justify', fontWeight: 'bold' }}>text text text text text text
+                        text text text text text texttext text text text text texttext text text text text
+                        texttext text text text text texttext text text text text texttext text text text text text
+                        text text text text text texttext text text text text texttext text text text text
+                        texttext text text text text texttext text text text text texttext text text text text text</div>
+                    <div style={{ marginTop: '15px' }}>text text text text text texttext text text text text texttext text text text text
+                        texttext text text text text texttext text text text text texttext text text text text text
+                        text text text text text texttext text text text text texttext text text text text
+                        texttext text text text text texttext text text text text texttext text text text text text
+                        text text text text text texttext text text text text texttext text text text text
+                        texttext text text text text texttext text text text text texttext text text text text text</div>
+                </div>
+                <div style={{ width: '60%', marginLeft: '10px' }}><img src={logo} width='750px' height='500px' /> </div>
+            </div>}
+            {
+                apiResponse &&
                 <Grid
                     container
                     spacing={2}
@@ -149,7 +168,7 @@ const Home = () => {
                     sx={{ marginTop: '20px', paddingX: '20px' }}
                 >
 
-                    <Grid container item xs={4} mt={3} sx={{width: '100%'}}>
+                    <Grid container item xs={4} mt={3} sx={{ width: '100%' }}>
                         <Grid container item spacing={3}>
                             <Typography variant={'h2'} mb={1}>Company profile</Typography>
                             <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }}>
@@ -162,194 +181,194 @@ const Home = () => {
                             </Card>
 
                         </Grid>
-                       
-                        <Grid container item spacing={3} mt={1} sx={{width:'100%'}}>
-                                <Typography variant={'h2'} mb={1}>Connected parties</Typography>
-                                {apiResponse.RELATED_PERSON_DETAILS.map((user, index) => (
-                                    <UserItem id={index} user={user.RELATED_PERSONS} key={index} sx={{width: '100%'}} />
-                                ))}
+
+                        <Grid container item spacing={3} mt={1} sx={{ width: '100%' }}>
+                            <Typography variant={'h2'} mb={1}>Connected parties</Typography>
+                            {apiResponse.RELATED_PERSON_DETAILS.map((user, index) => (
+                                <UserItem id={index} user={user.RELATED_PERSONS} key={index} sx={{ width: '100%' }} />
+                            ))}
                         </Grid>
-                        <Grid container direction={"column"} item spacing={3} mt={1} sx={{width:'100%'}}>
+                        <Grid container direction={"column"} item spacing={3} mt={1} sx={{ width: '100%' }}>
                             <Typography variant={'h2'} mb={1}>Documents</Typography>
                             <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }}>
-                            <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon>  
-                                            <FolderIcon />
-                                             {/* <DescriptionIcon /> */}
-                                        </ListItemIcon>
-                                        <ListItemText primary="Annual Report 2022-23" />
-                                    </ListItemButton>
-                                </ListItem>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon>
-                                        <FolderIcon />
-                                            {/* <DescriptionIcon /> */}
-                                        </ListItemIcon>
-                                        <ListItemText primary="Annual Filling 2022-23" />
-                                    </ListItemButton>
-                                </ListItem>
+                                <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                                    <ListItem disablePadding>
+                                        <ListItemButton>
+                                            <ListItemIcon>
+                                                <FolderIcon />
+                                                {/* <DescriptionIcon /> */}
+                                            </ListItemIcon>
+                                            <ListItemText primary="Annual Report 2022-23" />
+                                        </ListItemButton>
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemButton>
+                                            <ListItemIcon>
+                                                <FolderIcon />
+                                                {/* <DescriptionIcon /> */}
+                                            </ListItemIcon>
+                                            <ListItemText primary="Annual Filling 2022-23" />
+                                        </ListItemButton>
+                                    </ListItem>
                                 </List>
-                                    </Card>
+                            </Card>
                         </Grid>
 
                     </Grid>
                     <Grid item xs={8}>
-                    <Typography variant={'h2'} mb={1}>Sentiment analysis</Typography>
-                           
-                            <Grid 
-                                  container
-                                  spacing={2}
-                                  direction="column"
-                                  justifyContent="center"
-                                  alignItems="flex-start"
-                                  mt={-1}
-                                //   sx={{ marginTop: '0px' }}
+                        <Typography variant={'h2'} mb={1}>Sentiment analysis</Typography>
 
-                            >
-                                <Grid container item xs={6} spacing={1}>
-                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                        <Grid
+                            container
+                            spacing={2}
+                            direction="column"
+                            justifyContent="center"
+                            alignItems="flex-start"
+                            mt={-1}
+                        //   sx={{ marginTop: '0px' }}
+
+                        >
+                            <Grid container item xs={6} spacing={1}>
+                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                    <Grid
+                                        container
+                                        direction="column"
+                                        justifyContent="flex-start"
+                                        alignItems="flex-start"
+                                        mb={1}
+                                    >
+
+                                        <Typography variant='h3'>Company outlook</Typography>
                                         <Grid
                                             container
-                                            direction="column"
+                                            direction="row"
                                             justifyContent="flex-start"
-                                            alignItems="flex-start"
+                                            alignItems="center"
                                             mb={1}
                                         >
 
-                                            <Typography variant='h3'>Company outlook</Typography>
-                                            <Grid
-                                                container
-                                                direction="row"
-                                                justifyContent="flex-start"
-                                                alignItems="center"
-                                                mb={1}
-                                            >
-
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score: {mockData[0].sentiment_analysis.score} </Typography>
-                                                <Chip
-                                                    color="success"
-                                                    onClick={function () { }}
-                                                    size="sm"
-                                                    variant="soft"
-                                                    label="Positive"
-                                                />
-                                            </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].sentiment_analysis.remark}</Typography>
+                                            <Typography variant={'h4'} pt={1} mr={1}>Score: {mockData[0].sentiment_analysis.score} </Typography>
+                                            <Chip
+                                                color="success"
+                                                onClick={function () { }}
+                                                size="sm"
+                                                variant="soft"
+                                                label="Positive"
+                                            />
                                         </Grid>
-                                    </Card>
-                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                        <Typography variant={'p'} mb={3}>{mockData[0].sentiment_analysis.remark}</Typography>
+                                    </Grid>
+                                </Card>
+                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                    <Grid
+                                        container
+                                        direction="column"
+                                        justifyContent="flex-start"
+                                        alignItems="flex-start"
+                                        mb={1}
+                                    >
+
+                                        <Typography variant='h3'>Political exposure</Typography>
                                         <Grid
                                             container
-                                            direction="column"
+                                            direction="row"
                                             justifyContent="flex-start"
-                                            alignItems="flex-start"
+                                            alignItems="center"
                                             mb={1}
                                         >
 
-                                            <Typography variant='h3'>Political exposure</Typography>
-                                            <Grid
-                                                container
-                                                direction="row"
-                                                justifyContent="flex-start"
-                                                alignItems="center"
-                                                mb={1}
-                                            >
+                                            {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
+                                            <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].political_inclination.score} </Typography>
 
-                                                {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].political_inclination.score} </Typography> 
-
-                                                <Chip
-                                                    color="info"
-                                                    onClick={function () { }}
-                                                    size="sm"
-                                                    variant="soft"
-                                                    label="Moderate exposure"
-                                                />
-                                            </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].political_inclination.remark}</Typography>
+                                            <Chip
+                                                color="info"
+                                                onClick={function () { }}
+                                                size="sm"
+                                                variant="soft"
+                                                label="Moderate exposure"
+                                            />
                                         </Grid>
-                                    </Card>
-                                </Grid>
-                                <Grid container item xs={6} spacing={1}>
-                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                        <Typography variant={'p'} mb={3}>{mockData[0].political_inclination.remark}</Typography>
+                                    </Grid>
+                                </Card>
+                            </Grid>
+                            <Grid container item xs={6} spacing={1}>
+                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                    <Grid
+                                        container
+                                        direction="column"
+                                        justifyContent="flex-start"
+                                        alignItems="flex-start"
+                                        mb={1}
+                                    >
+
+                                        <Typography variant='h3'>Criminal background</Typography>
                                         <Grid
                                             container
-                                            direction="column"
+                                            direction="row"
                                             justifyContent="flex-start"
-                                            alignItems="flex-start"
+                                            alignItems="center"
                                             mb={1}
                                         >
 
-                                            <Typography variant='h3'>Criminal background</Typography>
-                                            <Grid
-                                                container
-                                                direction="row"
-                                                justifyContent="flex-start"
-                                                alignItems="center"
-                                                mb={1}
-                                            >
+                                            <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].criminal_background.score}</Typography>
 
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].criminal_background.score}</Typography>
-
-                                                <Chip
-                                                    color="info"
-                                                    onClick={function () { }}
-                                                    size="sm"
-                                                    variant="soft"
-                                                    label="No criminal record"
-                                                />
-                                            </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].criminal_background.remark}</Typography>
+                                            <Chip
+                                                color="info"
+                                                onClick={function () { }}
+                                                size="sm"
+                                                variant="soft"
+                                                label="No criminal record"
+                                            />
                                         </Grid>
-                                    </Card>
-                                    <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                        <Typography variant={'p'} mb={3}>{mockData[0].criminal_background.remark}</Typography>
+                                    </Grid>
+                                </Card>
+                                <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
+                                    <Grid
+                                        container
+                                        direction="column"
+                                        justifyContent="flex-start"
+                                        alignItems="flex-start"
+                                        mb={1}
+                                    >
+
+                                        <Typography variant='h3'>Business exposure</Typography>
                                         <Grid
                                             container
-                                            direction="column"
+                                            direction="row"
                                             justifyContent="flex-start"
-                                            alignItems="flex-start"
+                                            alignItems="center"
                                             mb={1}
                                         >
 
-                                            <Typography variant='h3'>Business exposure</Typography>
-                                            <Grid
-                                                container
-                                                direction="row"
-                                                justifyContent="flex-start"
-                                                alignItems="center"
-                                                mb={1}
-                                            >
+                                            <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].business_exposer.score}</Typography>
 
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].business_exposer.score}</Typography>
-
-                                                <Chip
-                                                    color="warning"
-                                                    onClick={function () { }}
-                                                    size="sm"
-                                                    variant="soft"
-                                                    label="High risk"
-                                                />
-                                            </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].business_exposer.remark}</Typography>
+                                            <Chip
+                                                color="warning"
+                                                onClick={function () { }}
+                                                size="sm"
+                                                variant="soft"
+                                                label="High risk"
+                                            />
                                         </Grid>
-                                    </Card>
-                                </Grid>
-                                 
-                                    
-                                    {/* <Divider /> */}
+                                        <Typography variant={'p'} mb={3}>{mockData[0].business_exposer.remark}</Typography>
+                                    </Grid>
+                                </Card>
+                            </Grid>
 
-                             </Grid>
+
+                            {/* <Divider /> */}
+
+                        </Grid>
                     </Grid>
                 </Grid>
-                
+
             }
 
-            
 
-        </React.Fragment>
+
+        </React.Fragment >
     );
 };
 

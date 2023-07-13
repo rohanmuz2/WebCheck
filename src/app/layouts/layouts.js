@@ -55,4 +55,4 @@ const LAYOUTS = [
 ];
 
 export default LAYOUT_NAMES;
-export {LAYOUTS};
+export { LAYOUTS };

@@ -1,4 +1,4 @@
-import {alpha} from "@mui/material/styles";
+import { alpha } from "@mui/material/styles";
 
 export const headerTheme = {
     type: "dark",
@@ -6,15 +6,15 @@ export const headerTheme = {
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    color: '#FFFFFF',
-                    background: '#222D45'
+                    color: '#4A5156',
+                    background: '#1D262C'
                 }
             }
         },
         MuiInputBase: {
             styleOverrides: {
                 root: {
-                    background: alpha('#FFFFFF', .25)
+                    background: alpha('#1D262C', .25)
                 }
             }
         },
@@ -72,7 +72,7 @@ export const headerTheme = {
             secondary: '#8595A6',
             disabled: '#A2B2C3',
         },
-        divider : '#DEE2E6',
+        divider: '#DEE2E6',
         background: {
             paper: '#FFFFFF',
             default: '#222d45',

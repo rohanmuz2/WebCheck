@@ -1,0 +1,13 @@
+.dashboard {
+    height: 68px;
+    background-color: #253038;
+    color: #FFFFFF;
+
+
+}
+
+.rowC {
+    display: flex;
+    flex-direction: row;
+    
+}
