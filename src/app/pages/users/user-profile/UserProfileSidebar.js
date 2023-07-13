@@ -108,11 +108,11 @@ console.log("🚀 ~ file: UserProfileSidebar.js:9 ~ user:", user)
                                         <Typography variant={'h4'} pt={1} mr={1}>Score : {user.SENTIMENT.political_inclination.score} </Typography>
 
                                         <Chip
-                                            color="info"
+                                            color="warning"
                                             onClick={function () { }}
                                             size="sm"
                                             variant="soft"
-                                            label="Moderate exposure"
+                                            label="Moderate to high exposure"
                                         />
                                     </Grid>
                                     <Typography variant={'p'} mb={3}>{user.SENTIMENT.political_inclination.remark}</Typography>
