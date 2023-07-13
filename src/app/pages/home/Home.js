@@ -131,6 +131,7 @@ const Home = () => {
 
     return (
          <React.Fragment>
+
             <SearchGlobal
                 sx={{
                     maxWidth: { xs: 240, md: 320 }
@@ -228,7 +229,7 @@ const Home = () => {
                                                 mb={1}
                                             >
 
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score: {mockData[0].sentiment_analysis.score} </Typography>
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score: {apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.score} </Typography>
                                                 <Chip
                                                     color="success"
                                                     onClick={function () { }}
@@ -237,7 +238,7 @@ const Home = () => {
                                                     label="Positive"
                                                 />
                                             </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].sentiment_analysis.remark}</Typography>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.sentiment_analysis.remark}</Typography>
                                         </Grid>
                                     </Card>
                                     <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
@@ -259,7 +260,7 @@ const Home = () => {
                                             >
 
                                                 {/* {/* <Typography variant={'h4'} pt={1} mr={1}>Left : {mockData[0].political_inclination.score.left_wing} | </Typography> */}
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].political_inclination.score} </Typography> 
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.political_inclination.score} </Typography> 
 
                                                 <Chip
                                                     color="info"
@@ -269,7 +270,7 @@ const Home = () => {
                                                     label="Moderate exposure"
                                                 />
                                             </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].political_inclination.remark}</Typography>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.political_inclination.remark}</Typography>
                                         </Grid>
                                     </Card>
                                 </Grid>
@@ -292,7 +293,7 @@ const Home = () => {
                                                 mb={1}
                                             >
 
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].criminal_background.score}</Typography>
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.criminal_background.score}</Typography>
 
                                                 <Chip
                                                     color="info"
@@ -302,7 +303,7 @@ const Home = () => {
                                                     label="No criminal record"
                                                 />
                                             </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].criminal_background.remark}</Typography>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.criminal_background.remark}</Typography>
                                         </Grid>
                                     </Card>
                                     <Card variant="outlined" sx={{ padding: '18px', marginBottom: '20px' }} >
@@ -323,7 +324,7 @@ const Home = () => {
                                                 mb={1}
                                             >
 
-                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {mockData[0].business_exposer.score}</Typography>
+                                                <Typography variant={'h4'} pt={1} mr={1}>Score : {apiResponse.PERSONAL_DETAILS.SENTIMENT.business_exposer.score}</Typography>
 
                                                 <Chip
                                                     color="warning"
@@ -333,7 +334,7 @@ const Home = () => {
                                                     label="High risk"
                                                 />
                                             </Grid>
-                                            <Typography variant={'p'} mb={3}>{mockData[0].business_exposer.remark}</Typography>
+                                            <Typography variant={'p'} mb={3}>{apiResponse.PERSONAL_DETAILS.SENTIMENT.business_exposer.remark}</Typography>
                                         </Grid>
                                     </Card>
                                 </Grid>
