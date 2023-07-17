@@ -158,10 +158,10 @@ const Home = () => {
                 />
                 {apiResponse == null && <div className='rowC' style={{ width: '100%', marginTop: '35px' }}>
                     <div style={{ width: '40%', marginRight:'10px' }}>
-                        <h1 style={{ textAlign: 'justify', fontWeight: 'bold' }}>
-                            NextGenKYC: Redefining KYC for Modern Banking Needs</h1>
+                        <h1 style={{ textAlign: 'justify', fontWeight: 'bold' , fontSize: '20px'}}>
+                            NextGenKYC: Redefining KYC for Future Banking Needs</h1>
                         <div style={{ marginTop: '15px', fontSize:'16px' }}>
-                            Experience a new era of KYC verification using Machine Learning & GenAI led platform revolutionizing the way banks authenticate customer identities.                </div>
+                            Experience a new era of KYC verification using GenAI led platform</div>
                     </div>
                     <div style={{ width: '60%', marginLeft: '10px' }}><img src={logo} width='100%' height='400px' /> </div>
                 </div>}
